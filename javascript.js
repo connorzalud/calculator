@@ -1,3 +1,32 @@
+let x
+let y
+let operator
+const display = document.querySelector(".display")
+const one = document.querySelector("#one");
+const two = document.querySelector("#two");
+const add1 = document.querySelector("#add");
+const equal = document.querySelector("#equal");
+
+one.addEventListener("click", function(){
+    display.value = "1";
+    x = 1
+})
+
+two.addEventListener("click", function(){
+    display.value = "2";
+    y = 2
+})
+
+add1.addEventListener("click", function(){
+    display.value = "+"
+    operator = "+"
+})
+
+equal.addEventListener("click", function(){
+    operate(x,operator,y);
+    display.value = result; 
+
+})
 
 
 
@@ -23,13 +52,14 @@ function divide(x,y){
 
 function operate(x, operator, y){
     if(operator === "+"){
-        add(x,y)
+       result = add(x,y)
     } else if(operator ==="-"){
-        subtract(x,y)
+       result = subtract(x,y)
     } else if(operator === "*"){
-        multiply(x,y)
+       result = multiply(x,y)
     } else if(operator === "/"){
-        divide(x,y)
+       result = divide(x,y)
     }
+    return result
 }
 
