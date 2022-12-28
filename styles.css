@@ -1,1 +1,39 @@
+.button-container{
+    display:flex;
+    flex-direction: column;
+    width:fit-content;
+    gap: 5px;
+    margin-top: 5px;
+}
 
+.row-0{
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.row-1{
+    display:flex;
+    justify-content: space-between;
+    gap:5px;
+}
+
+.row-2{
+    display:flex;
+    justify-content: space-between;
+}
+
+.row-3{
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-clear{
+    display:flex;
+    justify-content: center;
+}
+
+
+*{
+    border: 1px solid red;
+}
