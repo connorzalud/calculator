@@ -1,5 +1,4 @@
-let x
-let y
+let x = 0
 let operatorArray = []
 let operator
 const display = document.querySelector(".display")
@@ -19,8 +18,10 @@ one.addEventListener("click", function(){
         display.value = "1"
     } else if(display.value === "+"||display.value === "-"||display.value ==="*"|| display.value==="/"){
         display.value = "1"
-    } 
-    else{
+    } else if(x === 1){
+        display.value = "1";
+        x = 0
+    } else{
         display.value = display.value + "1"
     }
     
@@ -31,8 +32,10 @@ two.addEventListener("click", function(){
         display.value = "2"
     }else if(display.value === "+"||display.value === "-"||display.value ==="*"|| display.value==="/"){
         display.value = "2"
-    }  
-    else{
+    } else if(x === 1){
+        display.value = "2";
+        x = 0
+    } else{
         display.value = display.value + "2"
     }
    
@@ -43,9 +46,10 @@ three.addEventListener("click", function(){
         display.value = "3"
     }else if(display.value === "+"||display.value === "-"||display.value ==="*"|| display.value==="/"){
         display.value = "3"
-    }  
-    
-    else{
+    } else if(x === 1){
+        display.value = "3";
+        x = 0
+    } else{
         display.value = display.value + "3"
     }
     
@@ -56,8 +60,10 @@ four.addEventListener("click", function(){
         display.value = "4"
     } else if(display.value === "+"||display.value === "-"||display.value ==="*"|| display.value==="/"){
         display.value = "4"
-    } 
-    else{
+    } else if(x === 1){
+        display.value = "4";
+        x = 0
+    } else{
         display.value = display.value + "4"
     }
    
@@ -84,9 +90,13 @@ subtract.addEventListener("click",function(){
 equal.addEventListener("click", function(){
     operand = parseInt(display.value);
     operandsArray.push(operand);
-    operate2(operatorArray, operandsArray);
+    result = operate2(operatorArray, operandsArray);
+    display.value = result;
+    console.log(operatorArray);
+    console.log(operandsArray);
     operatorArray =[];
     operandsArray=[];
+    x = 1;
 
 })
 
@@ -138,7 +148,7 @@ function operate2(operatorArray, operandsArray){
             result -= operandsArray[i+1]
         }
      }
-
-     return console.log(result)
+console.log(result);
+     return result
 }
 
